@@ -4,7 +4,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 import { connect } from "react-redux";
 
-import { fetchGraph } from "../actions";
+import { changeGraphDates } from "../actions";
 import { setDays, formatDisplayDate, formatAPIDate } from "../utils";
 
 const DateRangePicker = (props) => {
@@ -25,8 +25,7 @@ const DateRangePicker = (props) => {
   const handleApplyClick = () => {
     setOpen(false);
     const { startDate, endDate } = dateRange[0];
-
-    props.fetchGraph(formatAPIDate(startDate), formatAPIDate(endDate));
+    props.changeGraphDates(formatAPIDate(startDate), formatAPIDate(endDate));
   };
 
   return (
@@ -60,5 +59,5 @@ const DateRangePicker = (props) => {
 };
 
 export default connect(null, {
-  fetchGraph,
+  changeGraphDates,
 })(DateRangePicker);

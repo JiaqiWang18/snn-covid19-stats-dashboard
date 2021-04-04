@@ -16,3 +16,7 @@ body {
   box-shadow: none;
   color: gray;
 }
+
+.dropdown-item {
+  cursor: pointer;
+}

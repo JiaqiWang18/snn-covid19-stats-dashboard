@@ -2,7 +2,15 @@
 export default (state = {}, action) => {
   switch (action.type) {
     case "FETCH_GRAPH":
-      return action.payload;
+      return { ...state, data: action.payload };
+    case "CHANGE_TYPE":
+      return { ...state, type: action.payload };
+    case "CHANGE_DATES":
+      return {
+        ...state,
+        startDate: action.payload.startDate,
+        endDate: action.payload.endDate,
+      };
     default:
       return state;
   }
