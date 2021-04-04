@@ -1,0 +1,18 @@
+body {
+  background-color: #ececec;
+}
+
+/* TopBar */
+.navbar-color {
+  background-color: #28334a;
+}
+
+/* MenuBar */
+.btn:hover {
+  color: gray;
+}
+
+.btn:focus {
+  box-shadow: none;
+  color: gray;
+}
