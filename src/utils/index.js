@@ -19,3 +19,8 @@ export const formatAPIDate = (date) => {
 
 export const formatDisplayDate = (dateObj) =>
   formatAPIDate(dateObj).replaceAll("-", "/");
+
+export const apiToDisplay = (udnerscored_case) =>
+  (udnerscored_case = udnerscored_case
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase()));

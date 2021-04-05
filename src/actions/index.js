@@ -2,9 +2,8 @@ import statsApi from "../apis/statsApi";
 
 export const fetchDisplay = (date) => async (dispatch) => {
   const response = await statsApi.get(`/get?date=${date}`);
-  console.log(response.data);
 
-  dispatch({ type: "FETCH_DISPLAY", payload: response.data });
+  dispatch({ type: "FETCH_DISPLAY", payload: { date, data: response.data } });
 };
 
 export const fetchGraph = (
@@ -25,7 +24,7 @@ export const changeGraphMetricType = (metricType) => async (
 ) => {
   dispatch({ type: "CHANGE_TYPE", payload: metricType });
 
-  dispatch(
+  await dispatch(
     fetchGraph(
       getState().graphData.startDate,
       getState().graphData.endDate,
@@ -39,6 +38,9 @@ export const changeGraphDates = (startDate, endDate) => async (
   getState
 ) => {
   dispatch({ type: "CHANGE_DATES", payload: { startDate, endDate } });
+  console.log(getState());
 
-  dispatch(fetchGraph(startDate, endDate, getState().graphData.metricType));
+  await dispatch(
+    fetchGraph(startDate, endDate, getState().graphData.metricType)
+  );
 };
