@@ -16,7 +16,7 @@ const DatePicker = (props) => {
   return (
     <div className={`dropdown ${open ? "show" : ""}`}>
       <button
-        className="btn"
+        className="btn text-muted"
         type="button"
         id="dropdownMenuButton"
         onClick={() => setOpen(!open)}

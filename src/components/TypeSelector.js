@@ -44,7 +44,7 @@ const TypeSelector = (props) => {
     <div className="btn-group">
       <button
         type="button"
-        className="btn"
+        className="btn text-muted"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { formatDisplayDate, apiToDisplay } from "../utils";
+import { apiToDisplay } from "../utils";
 const CityList = (props) => {
   const renderedOptions = Object.keys(props.cityData).map((key) => {
-    //hide item that is already selected
-    const show = props.cityData[key][1] === 0 ? "invisible mr-2" : "mr-2";
+    const show =
+      props.cityData[key][1] <= 0 ? "invisible mr-2" : "mr-2  text-muted";
     return (
       <div key={key} className="d-flex flex-row">
         <p>{apiToDisplay(key)}</p>
@@ -18,20 +18,21 @@ const CityList = (props) => {
 
   return (
     <div className="bg-white d-flex flex-column align-items-center">
-      <p className="h4 mt-3">Orange County Cities</p>
-      <p className="text-muted">Cases for {props.date}</p>
-      <div className="d-flex flex-column city-list">{renderedOptions}</div>
+      <p className="h5 mt-3">Orange County Cities</p>
+      <p className="text-muted">{props.date.replaceAll("-", "/")}</p>
+      <div className="d-flex flex-column city-list border-top">
+        {renderedOptions}
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  const target = state.displayData.data[formatDisplayDate(new Date())];
-  if (!target) return { cityData: {} };
+  const target = state.displayData.data[state.displayData.date] || {};
 
   return {
     date: state.displayData.date,
-    cityData: target["Orange County Cities"],
+    cityData: target["Orange County Cities"] || {},
   };
 };
 

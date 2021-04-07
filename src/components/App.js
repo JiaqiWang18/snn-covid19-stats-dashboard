@@ -1,9 +1,9 @@
 import React from "react";
 import TopBar from "./TopBar";
 import "./index.css";
-import Graphs from "./Graphs";
 import DataDisplay from "./DataDisplay";
 import CityList from "./CityList";
+import GraphSetGrid from "./GraphSetGrid";
 
 const App = () => {
   return (
@@ -11,9 +11,9 @@ const App = () => {
       <TopBar />
       <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-9 my-3">
+          <div className="col-lg-10 my-3">
             <DataDisplay />
-            <Graphs />
+            <GraphSetGrid />
           </div>
           <div className="col-lg my-3">
             <CityList />

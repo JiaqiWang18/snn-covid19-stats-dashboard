@@ -7,9 +7,9 @@ import { connect } from "react-redux";
 import { changeGraphDates } from "../actions";
 import { setDays, formatDisplayDate, formatAPIDate } from "../utils";
 
-const DateRangePicker = (props) => {
+const GrahDateRangePicker = (props) => {
   const defaultEndDate = new Date();
-  const defaultStartDate = setDays(defaultEndDate, -31);
+  const defaultStartDate = setDays(defaultEndDate, -62);
 
   const [open, setOpen] = useState(false);
   const [dateRange, setDateRange] = useState([
@@ -31,7 +31,7 @@ const DateRangePicker = (props) => {
   return (
     <div className={`dropdown ${open ? "show" : ""}`}>
       <button
-        className="btn"
+        className="btn text-muted"
         type="button"
         id="dropdownMenuButton"
         onClick={() => setOpen(!open)}
@@ -44,8 +44,12 @@ const DateRangePicker = (props) => {
         <DateRange
           editableDateInputs={true}
           onChange={(item) => setDateRange([item.selection])}
-          moveRangeOnFirstSelection={false}
+          moveRangeOnFirstSelection={true}
           ranges={dateRange}
+          maxDate={new Date()}
+          minDate={new Date("2020-07-01")}
+          direction="vertical"
+          months={2}
         />
         <button type="button" className="btn" onClick={handleApplyClick}>
           Apply
@@ -60,4 +64,4 @@ const DateRangePicker = (props) => {
 
 export default connect(null, {
   changeGraphDates,
-})(DateRangePicker);
+})(GrahDateRangePicker);

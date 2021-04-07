@@ -1,5 +1,10 @@
+import { formatAPIDate } from "../utils";
+
 /* eslint-disable import/no-anonymous-default-export */
-export default (state = { data: {} }, action) => {
+export default (
+  state = { data: {}, date: formatAPIDate(new Date()) },
+  action
+) => {
   switch (action.type) {
     case "FETCH_DISPLAY":
       return { date: action.payload.date, data: action.payload.data };

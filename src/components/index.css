@@ -1,6 +1,13 @@
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 3px;
 }
 
 /* Track */
@@ -29,12 +36,12 @@ body {
 
 /* MenuBar */
 .btn:hover {
-  color: gray;
+  color: rgb(173, 171, 171) !important;
 }
 
 .btn:focus {
   box-shadow: none;
-  color: gray;
+  color: rgb(173, 171, 171) !important;
 }
 
 .dropdown-item {
@@ -43,12 +50,20 @@ body {
 
 /* CityList */
 .city-list {
-  width: 85%;
+  width: 80%;
 }
 
 @media (min-width: 992px) {
   .city-list {
     max-height: 73vh;
     overflow-y: auto;
+    width: 90%;
   }
 }
+
+/* GraphSetGrid */
+.dummy-btn:hover {
+  color: inherit !important;
+}
+
+/* TypeSelector */
