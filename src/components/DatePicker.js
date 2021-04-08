@@ -29,6 +29,8 @@ const DatePicker = (props) => {
             setDate(item);
             setOpen(false);
           }}
+          maxDate={new Date()}
+          minDate={new Date("2020-07-01")}
           date={date}
         />
       </div>

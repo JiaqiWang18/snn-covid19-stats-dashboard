@@ -15,7 +15,7 @@ const App = () => {
             <DataDisplay />
             <GraphSetGrid />
           </div>
-          <div className="col-lg my-3">
+          <div className="col-lg my-3 citylist-col">
             <CityList />
           </div>
         </div>

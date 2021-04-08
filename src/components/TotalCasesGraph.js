@@ -66,7 +66,6 @@ const TotalCasesGraph = (props) => {
       },
     ],
   };
-  console.log(props);
   return (
     <>
       <div className="row">
@@ -77,7 +76,6 @@ const TotalCasesGraph = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   const target = state.graphData.data[ownProps.location] || [];
   return {
     startDate: state.graphData.startDate,
