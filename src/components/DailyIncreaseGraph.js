@@ -74,11 +74,9 @@ const DailyIncreaseGraph = (props) => {
   };
 
   return (
-    <>
-      <div className="row">
-        <Bar data={dataForRender} options={chartOptions} height={225} />
-      </div>
-    </>
+    <div className="row">
+      <Bar data={dataForRender} options={chartOptions} height={225} />
+    </div>
   );
 };
 

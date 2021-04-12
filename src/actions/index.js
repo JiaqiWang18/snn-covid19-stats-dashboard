@@ -16,6 +16,9 @@ export const fetchGraph = (
   endDate,
   metricType = "total_cases"
 ) => async (dispatch) => {
+  dispatch({
+    type: "START_FETCH_GRAPH",
+  });
   const response = await statsApi.get(
     `/graph-data?start=${startDate}&end=${endDate}&type=${metricType}`
   );

@@ -4,8 +4,7 @@ import { apiToDisplay } from "../utils";
 
 const CADisplay = (props) => {
   const renderedDisplayCols = Object.keys(props.data).map((key) => {
-    const show =
-      props.data[key][1] <= 0 ? "invisible mr-2" : "mr-2  text-muted";
+    const show = props.data[key][1] <= 0 ? "display-none" : "mx-2 text-muted";
     return (
       <div className="col mb-3" key={key}>
         <p className="text-center">
@@ -15,7 +14,7 @@ const CADisplay = (props) => {
           key={key}
           className="d-flex flex-row ml-auto justify-content-center"
         >
-          <p className="mr-2">{props.data[key][0].commarize()}</p>
+          <p>{props.data[key][0].commarize()}</p>
           <p className={show}>{`+${String(props.data[key][1]).replace(
             /\B(?=(\d{3})+(?!\d))/g,
             ","

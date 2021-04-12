@@ -4,6 +4,10 @@ p {
   margin-bottom: 5px;
 }
 
+.display-none {
+  display: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 3px;

@@ -4,7 +4,7 @@ import { apiToDisplay } from "../utils";
 
 const CountyDisplay = (props) => {
   const renderedDisplayCols = Object.keys(props.data).map((key) => {
-    const show = props.data[key][1] <= 0 ? "invisible" : "mr-2  text-muted";
+    const show = props.data[key][1] <= 0 ? "display-none" : "mx-2 text-muted";
     return (
       <div className="col mb-3 county-text" key={key}>
         <p className="text-center">
@@ -14,7 +14,7 @@ const CountyDisplay = (props) => {
           key={key}
           className="d-flex flex-row ml-auto justify-content-center"
         >
-          <p className="mr-2">{props.data[key][0].commarize()}</p>
+          <p className="mr-1">{props.data[key][0].commarize()}</p>
           <p className={show}>{`+${String(props.data[key][1]).replace(
             /\B(?=(\d{3})+(?!\d))/g,
             ","
