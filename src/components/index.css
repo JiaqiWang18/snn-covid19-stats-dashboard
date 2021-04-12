@@ -54,7 +54,7 @@ body {
 
 @media (min-width: 992px) {
   .city-list {
-    max-height: 770px;
+    height: 770px;
     overflow-y: auto;
     width: 95%;
   }
@@ -89,6 +89,7 @@ body {
 }
 
 @media (max-width: 992px) {
+  .oc-col,
   .us-col {
     margin-bottom: 10px !important;
   }
@@ -108,6 +109,38 @@ body {
   font-size: 13px;
 }
 
-.citylist-col {
-  padding-left: 0;
+@media (min-width: 992px) {
+  .citylist-col {
+    padding-left: 0;
+  }
+}
+
+/*Loader*/
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

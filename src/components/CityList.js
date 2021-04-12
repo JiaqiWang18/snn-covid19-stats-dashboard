@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { apiToDisplay } from "../utils";
+import Loader from "./Loader";
 const CityList = (props) => {
   const renderedOptions = Object.keys(props.cityData).map((key) => {
     const show =
@@ -18,11 +19,17 @@ const CityList = (props) => {
 
   return (
     <div className="bg-white d-flex flex-column align-items-center">
-      <p className="h5 mt-3">Orange County Cities</p>
-      <p className="text-muted">{props.date.replaceAll("-", "/")}</p>
-      <div className="d-flex flex-column city-list border-top">
-        {renderedOptions}
-      </div>
+      {props.fetching ? (
+        <Loader />
+      ) : (
+        <>
+          <p className="h5 mt-3">Orange County Cities</p>
+          <p className="text-muted">{props.date.replaceAll("-", "/")}</p>
+          <div className="d-flex flex-column city-list border-top">
+            {renderedOptions}
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -33,6 +40,7 @@ const mapStateToProps = (state) => {
   return {
     date: state.displayData.date,
     cityData: target["Orange County Cities"] || {},
+    fetching: state.displayData.fetching,
   };
 };
 

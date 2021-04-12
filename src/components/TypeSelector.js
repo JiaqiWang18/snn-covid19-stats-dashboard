@@ -21,7 +21,6 @@ const options = [
 const TypeSelector = (props) => {
   const [selected, setSelected] = useState(options[0]);
   useEffect(() => {
-    console.log(selected.value);
     props.changeGraphMetricType(selected.value);
   }, [selected]);
 
