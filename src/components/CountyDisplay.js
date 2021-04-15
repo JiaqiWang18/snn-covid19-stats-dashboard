@@ -23,9 +23,8 @@ const CountyDisplay = (props) => {
       </div>
     );
   });
-
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column px-2">
       <p className="text-center text-muted my-1">{props.location}</p>
       <div className="row">{renderedDisplayCols}</div>
     </div>

@@ -1,7 +1,6 @@
 p {
   margin: 0;
   padding: 0;
-  margin-bottom: 5px;
 }
 
 .display-none {
@@ -44,7 +43,6 @@ body {
 
 .btn:focus {
   box-shadow: none;
-  color: rgb(173, 171, 171) !important;
 }
 
 .dropdown-item {
@@ -58,7 +56,7 @@ body {
 
 @media (min-width: 992px) {
   .city-list {
-    height: 770px;
+    height: 740px;
     overflow-y: auto;
     width: 95%;
   }

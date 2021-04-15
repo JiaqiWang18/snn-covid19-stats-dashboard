@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { apiToDisplay } from "../utils";
 import Loader from "./Loader";
 const CityList = (props) => {
-  const renderedOptions = Object.keys(props.cityData).map((key) => {
+  const renderedCityList = Object.keys(props.cityData).map((key) => {
     const show =
       props.cityData[key][1] <= 0 ? "invisible mr-2" : "mr-2  text-muted";
     return (
@@ -16,7 +16,6 @@ const CityList = (props) => {
       </div>
     );
   });
-
   return (
     <div className="bg-white d-flex flex-column align-items-center">
       {props.fetching ? (
@@ -26,7 +25,13 @@ const CityList = (props) => {
           <p className="h5 mt-3">Orange County Cities</p>
           <p className="text-muted">{props.date.replaceAll("-", "/")}</p>
           <div className="d-flex flex-column city-list border-top">
-            {renderedOptions}
+            {renderedCityList.length === 0 ? (
+              <p className="h5 text-muted text-center mt-5">
+                Data not available on {props.date.replaceAll("-", "/")}
+              </p>
+            ) : (
+              renderedCityList
+            )}
           </div>
         </>
       )}

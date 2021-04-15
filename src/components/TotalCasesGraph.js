@@ -23,16 +23,10 @@ const TotalCasesGraph = (props) => {
         {
           type: "time",
           time: {
+            unit: "day",
+            unitStepSize: 1,
             displayFormats: {
-              millisecond: "MMM DD",
-              second: "MMM DD",
-              minute: "MMM DD",
-              hour: "MMM DD",
               day: "MMM DD",
-              week: "MMM DD",
-              month: "MMM DD",
-              quarter: "MMM DD",
-              year: "MMM DD",
             },
           },
         },
@@ -66,6 +60,7 @@ const TotalCasesGraph = (props) => {
       },
     ],
   };
+
   return (
     <>
       <div className="row">
@@ -76,6 +71,7 @@ const TotalCasesGraph = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state);
   const target = state.graphData.data[ownProps.location] || [];
   return {
     startDate: state.graphData.startDate,
