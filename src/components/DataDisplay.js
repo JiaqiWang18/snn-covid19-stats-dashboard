@@ -7,8 +7,6 @@ import Loader from "./Loader";
 import UnitedStatesDisplay from "./UnitedStatesDisplay";
 
 const DataDIsplay = (props) => {
-  console.log(props.fetching);
-
   return (
     <>
       <div className="bg-white d-flex flex-row justify-content-start border-bottom mb-2">

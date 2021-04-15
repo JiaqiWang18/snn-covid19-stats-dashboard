@@ -18,24 +18,24 @@ const options = [
   },
 ];
 
-const TypeSelector = (props) => {
+const TypeSelector = ({ changeGraphMetricType }) => {
   const [selected, setSelected] = useState(options[0]);
   useEffect(() => {
-    props.changeGraphMetricType(selected.value);
-  }, [selected]);
+    changeGraphMetricType(selected.value);
+  }, [selected, changeGraphMetricType]);
 
   const renderedOptions = options.map((option) => {
     //hide item that is already selected
     if (option.value === selected.value) return null;
 
     return (
-      <a
+      <button
         className="dropdown-item"
         key={option.value}
         onClick={() => setSelected(option)}
       >
         {option.label}
-      </a>
+      </button>
     );
   });
 

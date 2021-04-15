@@ -45,5 +45,6 @@ function commarize() {
 }
 
 // Add method to prototype. this allows you to use this function on numbers and strings directly
+
+// eslint-disable-next-line no-extend-native
 Number.prototype.commarize = commarize;
-String.prototype.commarize = commarize;

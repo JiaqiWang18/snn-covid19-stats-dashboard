@@ -20,13 +20,16 @@ const GrahDateRangePicker = (props) => {
     },
   ]);
 
-  useEffect(() => handleApplyClick(), []);
-
   const handleApplyClick = () => {
     setOpen(false);
     const { startDate, endDate } = dateRange[0];
     props.changeGraphDates(formatAPIDate(startDate), formatAPIDate(endDate));
   };
+
+  useEffect(() => {
+    handleApplyClick();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={`dropdown ${open ? "show" : ""}`}>

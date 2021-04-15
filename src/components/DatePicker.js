@@ -7,11 +7,11 @@ import { connect } from "react-redux";
 import { fetchDisplay } from "../actions";
 import { formatDisplayDate, formatAPIDate } from "../utils";
 
-const DatePicker = (props) => {
+const DatePicker = ({ fetchDisplay }) => {
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState(new Date());
 
-  useEffect(() => props.fetchDisplay(formatAPIDate(date)), [date]);
+  useEffect(() => fetchDisplay(formatAPIDate(date)), [date, fetchDisplay]);
 
   return (
     <div className={`dropdown ${open ? "show" : ""}`}>
