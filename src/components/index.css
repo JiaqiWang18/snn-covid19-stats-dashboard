@@ -146,3 +146,10 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* DatePicker */
+.dropdown-fixed {
+  position: absolute;
+  top: 40px;
+  left: -105px;
+}

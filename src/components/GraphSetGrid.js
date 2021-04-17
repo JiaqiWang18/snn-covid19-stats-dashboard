@@ -8,8 +8,8 @@ import Loader from "./Loader";
 
 const GraphSetGrid = (props) => {
   return (
-    <div className="bg-white">
-      <div className="d-flex flex-row justify-content-start my-3 border-bottom">
+    <div className="bg-white position-relative">
+      <div className="row justify-content-start my-3 border-bottom px-3">
         <p className="btn dummy-btn lead">Date Range:</p>
         <GrahDateRangePicker />
         <p className="btn dummy-btn lead">Metric Type:</p>

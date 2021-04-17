@@ -26,6 +26,19 @@ const GrahDateRangePicker = (props) => {
     props.changeGraphDates(formatAPIDate(startDate), formatAPIDate(endDate));
   };
 
+  const renderDataRangePicker = (direction) => (
+    <DateRange
+      editableDateInputs={true}
+      onChange={(item) => setDateRange([item.selection])}
+      moveRangeOnFirstSelection={true}
+      ranges={dateRange}
+      maxDate={new Date()}
+      minDate={new Date("2020-07-01")}
+      months={2}
+      direction={direction}
+    />
+  );
+
   useEffect(() => {
     handleApplyClick();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,17 +56,10 @@ const GrahDateRangePicker = (props) => {
           dateRange[0].endDate
         )}`}
       </button>
-      <div className={`dropdown-menu ${open ? "show" : ""}`}>
-        <DateRange
-          editableDateInputs={true}
-          onChange={(item) => setDateRange([item.selection])}
-          moveRangeOnFirstSelection={true}
-          ranges={dateRange}
-          maxDate={new Date()}
-          minDate={new Date("2020-07-01")}
-          direction="vertical"
-          months={2}
-        />
+      <div className={`dropdown-menu dropdown-fixed ${open ? "show" : ""}`}>
+        {window.innerWidth > 715
+          ? renderDataRangePicker("horizontal")
+          : renderDataRangePicker("vertical")}
         <button type="button" className="btn" onClick={handleApplyClick}>
           Apply
         </button>

@@ -23,7 +23,7 @@ const DatePicker = ({ fetchDisplay }) => {
       >
         {formatDisplayDate(date)}
       </button>
-      <div className={`dropdown-menu ${open ? "show" : ""}`}>
+      <div className={`dropdown-menu dropdown-fixed ${open ? "show" : ""}`}>
         <Calendar
           onChange={(item) => {
             setDate(item);

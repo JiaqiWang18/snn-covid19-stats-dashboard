@@ -25,7 +25,7 @@ const UnitedStatesDisplay = (props) => {
     );
   });
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column px-1">
       <p className="text-center mb-3 us-label text-muted my-4">United States</p>
       <div className="row">{renderedDisplayCols}</div>
     </div>
