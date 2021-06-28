@@ -8,9 +8,9 @@ const CityList = (props) => {
       props.cityData[key][1] <= 0 ? "invisible mr-2" : "mr-2  text-muted";
     return (
       <div key={key} className="d-flex flex-row">
-        <p>{apiToDisplay(key)}</p>
+        <p className="p">{apiToDisplay(key)}</p>
         <div key={key} className="d-flex flex-row ml-auto">
-          <p className="mr-2">{props.cityData[key][0]}</p>
+          <p className="mr-2 p text-muted">{props.cityData[key][0]}</p>
           <p className={show}>{`+${props.cityData[key][1]}`}</p>
         </div>
       </div>
@@ -22,11 +22,11 @@ const CityList = (props) => {
         <Loader />
       ) : (
         <>
-          <p className="h5 mt-3">Orange County Cities</p>
+          <p className="h6 mt-3 text-center">Orange County Cities</p>
           <p className="text-muted">{props.date.replaceAll("-", "/")}</p>
           <div className="d-flex flex-column city-list border-top">
             {renderedCityList.length === 0 ? (
-              <p className="h5 text-muted text-center mt-5">
+              <p className="h6 text-muted text-center mt-5">
                 Data not available on {props.date.replaceAll("-", "/")}
               </p>
             ) : (
