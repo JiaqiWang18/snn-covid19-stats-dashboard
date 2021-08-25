@@ -9,7 +9,7 @@ import { setDays, formatDisplayDate, formatAPIDate } from "../utils";
 
 const GrahDateRangePicker = (props) => {
   const defaultEndDate = new Date();
-  const defaultStartDate = setDays(defaultEndDate, -62);
+  const defaultStartDate = setDays(defaultEndDate, -31);
 
   const [open, setOpen] = useState(false);
   const [dateRange, setDateRange] = useState([
@@ -33,7 +33,7 @@ const GrahDateRangePicker = (props) => {
       moveRangeOnFirstSelection={true}
       ranges={dateRange}
       maxDate={new Date()}
-      minDate={new Date("2020-07-01")}
+      minDate={new Date("2021-07-22")}
       months={2}
       direction={direction}
     />
