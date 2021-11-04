@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://snn-stats-api.herokuapp.com/",
+  baseURL: 'https://bxze0qjjbi.execute-api.us-west-1.amazonaws.com/Prod/',
 });
